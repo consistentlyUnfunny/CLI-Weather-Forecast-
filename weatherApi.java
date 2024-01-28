@@ -19,7 +19,7 @@ public class weatherApi {
         city name = new city();
         String cityName = name.getCity();
         HttpRequest postReq = HttpRequest.newBuilder() //build necessary information
-                .uri(new URI("http://api.openweathermap.org/geo/1.0/direct?" + "q=" + cityName + "&limit=3&appid=9174218ad064daac79f8a475b7742a0c"))
+                .uri(new URI("http://api.openweathermap.org/geo/1.0/direct?" + "q=" + cityName + "&limit=3&appid=")) // append api key here
                 .build();
         System.out.println(postReq.uri());
 
@@ -47,7 +47,7 @@ public class weatherApi {
 
     public void currentWeather() throws Exception {
         HttpRequest postReq2 = HttpRequest.newBuilder()
-                .uri(new URI("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=9174218ad064daac79f8a475b7742a0c&units=metric"))
+                .uri(new URI("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=")) // append api key here
                 .build();
         System.out.println(postReq2);
         HttpClient client2 = HttpClient.newBuilder().build();
@@ -81,7 +81,7 @@ public class weatherApi {
 
     public void getForecast() throws Exception{
         HttpRequest postReq3 = HttpRequest.newBuilder()
-                .uri(new URI("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=9174218ad064daac79f8a475b7742a0c&units=metric"))
+                .uri(new URI("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=")) // append api key here
                 .build();
         System.out.println(postReq3);
         HttpClient client3 = HttpClient.newBuilder().build();
